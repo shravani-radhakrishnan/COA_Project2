@@ -21,7 +21,7 @@ Matrix Multiplication Kernel
 
 ===================================================
                   PART 1
-
+===================================================
 * interactive -p gpu-build 
 * nvcc matrix_Mul_gpu_part1.cu -o matrix_Mul_gpu_part1.ext 
 * ./matrix_Mul_gpu_part1.ext 
@@ -30,6 +30,7 @@ Matrix Multiplication Kernel
 
 ===================================================
                   PART 2
+===================================================
 
 * nvcc matrix_Mul_gpu_part2.cu -o matrix_Mul_gpu_part2.ext 
 * ./matrix_Mul_gpu_part2.ext 
@@ -38,6 +39,7 @@ Matrix Multiplication Kernel
 
 ===================================================
                   PART 3
+===================================================
 
 * nvcc matrix_Mul_gpu_part3.cu -o matrix_Mul_gpu_part3.ext 
 * ./matrix_Mul_gpu_part3.ext 
@@ -46,6 +48,7 @@ Matrix Multiplication Kernel
 
 ===================================================
                   PART 4
+===================================================
 
 * nvcc matrix_Mul_gpu_part4.cu -o matrix_Mul_gpu_part4.ext 
 * ./matrix_Mul_gpu_part4.ext 
