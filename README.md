@@ -29,21 +29,21 @@ Matrix Multiplication Kernel
 * Results are stored in Results folder in part1 file
 
 
-      ### PART 2
+    ### PART 2
 
 * nvcc matrix_Mul_gpu_part2.cu -o matrix_Mul_gpu_part2.ext 
 * ./matrix_Mul_gpu_part2.ext 
 * nvprof ./matrix_Mul_gpu_part2.cu 
 * Results are stored in Results folder in part2 file
 
-      ### PART 3
+    ### PART 3
 
 * nvcc matrix_Mul_gpu_part3.cu -o matrix_Mul_gpu_part3.ext 
 * ./matrix_Mul_gpu_part3.ext 
 * nvprof ./matrix_Mul_gpu_part3.cu 
 * Results are stored in Results folder in part3 file
 
-      ### PART 4
+    ### PART 4
 
 * nvcc matrix_Mul_gpu_part4.cu -o matrix_Mul_gpu_part4.ext 
 * ./matrix_Mul_gpu_part4.ext 
