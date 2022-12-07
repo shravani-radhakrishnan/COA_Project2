@@ -1,4 +1,5 @@
-all: cpu GPU_Part1 GPU_Part2 GPU_Part3 GPU_Part4
+all: 
+	cpu GPU_Part1 GPU_Part2 GPU_Part3 GPU_Part4
 
 cpu:
 	g++ matrixMul_cpu.cpp -o matrixMul_cpu.exe
