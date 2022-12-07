@@ -7,7 +7,7 @@ Matrix Multiplication Kernel
   * (TODO) R11800063.
   * (TODO) smanduva@ttu.edu.
 
-===================================================
+
     Normal CPU Code Execution
 ===================================================
 
@@ -20,8 +20,8 @@ Matrix Multiplication Kernel
 * time ./matrixMul_cpu.ext
 * All results are saved in 
 
-===================================================
-                  PART 1
+
+                  PART 1 
 ===================================================
 * interactive -p gpu-build 
 * nvcc matrix_Mul_gpu_part1.cu -o matrix_Mul_gpu_part1.ext 
@@ -29,7 +29,7 @@ Matrix Multiplication Kernel
 * nvprof ./matrix_Mul_gpu_part1.cu 
 * Results are stored in Results folder in part1 file
 
-===================================================
+
                   PART 2
 ===================================================
 
@@ -38,7 +38,6 @@ Matrix Multiplication Kernel
 * nvprof ./matrix_Mul_gpu_part2.cu 
 * Results are stored in Results folder in part2 file
 
-===================================================
                   PART 3
 ===================================================
 
@@ -47,7 +46,6 @@ Matrix Multiplication Kernel
 * nvprof ./matrix_Mul_gpu_part3.cu 
 * Results are stored in Results folder in part3 file
 
-===================================================
                   PART 4
 ===================================================
 
