@@ -1,32 +1,36 @@
-gpu-20-11:/CS5375_GPU_Lecture/Project$ vi matrixMul_gpu_part3.cu
-gpu-20-11:/CS5375_GPU_Lecture/Project$ nvcc matrixMul_gpu_part3.cu -o matrixMul_gpu_part3.ext
-gpu-20-11:/CS5375_GPU_Lecture/Project$ nvprof ./matrixMul_gpu_part3.ext
+gpu-20-11:/COA_Project2$ nvcc matrix_Mul_gpu_part3.cu -o matrix_Mul_gpu_part3.ext
+gpu-20-11:/COA_Project2$ ./matrix_Mul_gpu_part3.ext
 Size of matrix (N) is 512 by 512.
-==28047== NVPROF is profiling process 28047, command: ./matrixMul_gpu_part3.ext
 Starting unoptimized GPU computation
-It took 139.234000 ms on avg.
+It took 137.905000 ms on avg.
 RUN OK.
-==28047== Profiling application: ./matrixMul_gpu_part3.ext
-==28047== Profiling result:
+gpu-20-11:/COA_Project2$ nvprof ./matrix_Mul_gpu_part3.ext
+Size of matrix (N) is 512 by 512.
+==19175== NVPROF is profiling process 19175, command: ./matrix_Mul_gpu_part3.ext
+Starting unoptimized GPU computation
+It took 137.915667 ms on avg.
+RUN OK.
+==19175== Profiling application: ./matrix_Mul_gpu_part3.ext
+==19175== Profiling result:
             Type  Time(%)      Time     Calls       Avg       Min       Max  Name
- GPU activities:  100.00%  570.50ms         4  142.63ms  138.00ms  152.00ms  GPUmatmul(int, double*, double*, double*)
-      API calls:   68.89%  570.52ms         4  142.63ms  138.01ms  152.00ms  cudaDeviceSynchronize
-                   30.95%  256.35ms         3  85.449ms  30.088us  256.26ms  cudaMallocManaged
-                    0.07%  598.57us         1  598.57us  598.57us  598.57us  cuDeviceTotalMem
-                    0.06%  472.63us         3  157.54us  127.53us  186.01us  cudaFree
-                    0.02%  141.08us         4  35.270us  6.6470us  115.30us  cudaLaunchKernel
-                    0.01%  99.020us       101     980ns     124ns  38.626us  cuDeviceGetAttribute
-                    0.00%  18.070us         1  18.070us  18.070us  18.070us  cuDeviceGetName
-                    0.00%  1.8700us         1  1.8700us  1.8700us  1.8700us  cuDeviceGetPCIBusId
-                    0.00%  1.0740us         3     358ns     199ns     643ns  cuDeviceGetCount
-                    0.00%     612ns         2     306ns     149ns     463ns  cuDeviceGet
-                    0.00%     252ns         1     252ns     252ns     252ns  cuDeviceGetUuid
+ GPU activities:  100.00%  554.13ms         4  138.53ms  138.11ms  139.67ms  GPUmatmul(int, double*, double*, double*)
+      API calls:   72.43%  554.14ms         4  138.53ms  138.12ms  139.67ms  cudaDeviceSynchronize
+                   27.35%  209.27ms         3  69.756ms  9.9870us  209.23ms  cudaMallocManaged
+                    0.08%  620.91us         1  620.91us  620.91us  620.91us  cuDeviceTotalMem
+                    0.07%  543.19us         3  181.06us  156.84us  214.26us  cudaFree
+                    0.06%  420.92us       101  4.1670us     128ns  342.55us  cuDeviceGetAttribute
+                    0.01%  58.584us         4  14.646us  6.1340us  29.499us  cudaLaunchKernel
+                    0.00%  24.012us         1  24.012us  24.012us  24.012us  cuDeviceGetName
+                    0.00%  1.9670us         1  1.9670us  1.9670us  1.9670us  cuDeviceGetPCIBusId
+                    0.00%  1.3300us         3     443ns     197ns     919ns  cuDeviceGetCount
+                    0.00%     698ns         2     349ns     166ns     532ns  cuDeviceGet
+                    0.00%     245ns         1     245ns     245ns     245ns  cuDeviceGetUuid
 
-==28047== Unified Memory profiling result:
+==19175== Unified Memory profiling result:
 Device "Tesla V100-PCIE-32GB (0)"
    Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
-      42  146.29KB  4.0000KB  0.9961MB  6.000000MB  623.6480us  Host To Device
-      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.4080us  Device To Host
-      13         -         -         -           -  1.688992ms  Gpu page fault groups
+      42  146.29KB  4.0000KB  0.9961MB  6.000000MB  611.7440us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.2800us  Device To Host
+      13         -         -         -           -  1.561088ms  Gpu page fault groups
 Total CPU Page faults: 24
-gpu-20-11:/CS5375_GPU_Lecture/Project$ 
+gpu-20-11:/COA_Project2$ 

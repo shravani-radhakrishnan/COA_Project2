@@ -1,57 +1,36 @@
-CPU
-==================================>
-gpu-20-11:/CS5375_GPU_Lecture/Project$ logout
-salloc: Relinquishing job allocation 7831947
-login-20-26:/CS5375_GPU_Lecture/Project$ ./matrixMul_gpu.exe 
-Size of matrix (N) is 512 by 512.
-Starting CPU computation
-It took 744.045333 ms on avg.
-RUN OK.
-Size of matrix (N) is 512 by 512.
-Starting CPU computation
-It took 1121.817000 ms on avg.
-RUN OK.
-
-real	0m7.841s
-user	0m4.492s
-sys	0m0.002s
-gpu-20-11:/CS5375_GPU_Lecture/Project$ 
-==================================>
-GPU
-
-gpu-20-11:/CS5375_GPU_Lecture/Project$ ./matrixMul_gpu_part1.ext
+gpu-20-11:/COA_Project2$ nvcc matrix_Mul_gpu_part1.cu -o matrix_Mul_gpu_part1.ext
+gpu-20-11:/COA_Project2$ ./matrix_Mul_gpu_part1.ext
 Size of matrix (N) is 512 by 512.
 Starting unoptimized GPU computation
-It took 9408.470000 ms on avg.
+It took 9408.104667 ms on avg.
 RUN OK.
-gpu-20-11:/CS5375_GPU_Lecture/Project$ nvprof ./matrixMul_gpu_part1.ext
+gpu-20-11:/COA_Project2$ nvprof ./matrix_Mul_gpu_part1.ext
 Size of matrix (N) is 512 by 512.
-==25282== NVPROF is profiling process 25282, command: ./matrixMul_gpu_part1.ext
+==17954== NVPROF is profiling process 17954, command: ./matrix_Mul_gpu_part1.ext
 Starting unoptimized GPU computation
-It took 9405.536333 ms on avg.
+It took 23197.545333 ms on avg.
 RUN OK.
-==25282== Profiling application: ./matrixMul_gpu_part1.ext
-==25282== Profiling result:
+==17954== Profiling application: ./matrix_Mul_gpu_part1.ext
+==17954== Profiling result:
             Type  Time(%)      Time     Calls       Avg       Min       Max  Name
- GPU activities:  100.00%  37.7098s         4  9.42745s  9.42114s  9.44589s  GPUmatmul(int, double*, double*, double*)
-      API calls:   99.46%  37.7099s         4  9.42747s  9.42116s  9.44591s  cudaDeviceSynchronize
-                    0.54%  204.51ms         3  68.169ms  9.8580us  204.47ms  cudaMallocManaged
-                    0.00%  632.78us         3  210.93us  168.92us  288.67us  cudaFree
-                    0.00%  600.71us         1  600.71us  600.71us  600.71us  cuDeviceTotalMem
-                    0.00%  301.85us         4  75.461us  46.980us  154.62us  cudaLaunchKernel
-                    0.00%  95.429us       101     944ns     123ns  38.806us  cuDeviceGetAttribute
-                    0.00%  17.884us         1  17.884us  17.884us  17.884us  cuDeviceGetName
-                    0.00%  1.7590us         1  1.7590us  1.7590us  1.7590us  cuDeviceGetPCIBusId
-                    0.00%     972ns         3     324ns     165ns     641ns  cuDeviceGetCount
-                    0.00%     539ns         2     269ns     188ns     351ns  cuDeviceGet
-                    0.00%     295ns         1     295ns     295ns     295ns  cuDeviceGetUuid
+ GPU activities:  100.00%  82.0224s         4  20.5056s  12.3108s  23.2619s  GPUmatmul(int, double*, double*, double*)
+      API calls:   99.74%  82.0289s         4  20.5072s  12.3108s  23.2641s  cudaDeviceSynchronize
+                    0.26%  211.57ms         3  70.522ms  28.684us  211.48ms  cudaMallocManaged
+                    0.00%  794.03us         3  264.68us  162.41us  442.51us  cudaFree
+                    0.00%  566.78us         1  566.78us  566.78us  566.78us  cuDeviceTotalMem
+                    0.00%  287.03us         4  71.757us  55.866us  114.84us  cudaLaunchKernel
+                    0.00%  95.681us       101     947ns     124ns  38.646us  cuDeviceGetAttribute
+                    0.00%  17.346us         1  17.346us  17.346us  17.346us  cuDeviceGetName
+                    0.00%  4.5660us         1  4.5660us  4.5660us  4.5660us  cuDeviceGetPCIBusId
+                    0.00%     859ns         3     286ns     118ns     548ns  cuDeviceGetCount
+                    0.00%     512ns         2     256ns     147ns     365ns  cuDeviceGet
+                    0.00%     291ns         1     291ns     291ns     291ns  cuDeviceGetUuid
 
-==25282== Unified Memory profiling result:
+==17954== Unified Memory profiling result:
 Device "Tesla V100-PCIE-32GB (0)"
    Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
-      36  170.67KB  4.0000KB  0.9961MB  6.000000MB  591.7440us  Host To Device
-      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.4400us  Device To Host
-      15         -         -         -           -  2.128096ms  Gpu page fault groups
+      36  170.67KB  4.0000KB  0.9961MB  6.000000MB  591.1040us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  171.8400us  Device To Host
+      15         -         -         -           -  2.150112ms  Gpu page fault groups
 Total CPU Page faults: 24
-
-   
+gpu-20-11:/COA_Project2$ 

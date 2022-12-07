@@ -1,30 +1,36 @@
-gpu-20-11:/CS5375_GPU_Lecture/Project$ nvprof ./matrixMul_gpu_part2.ext
+gpu-20-11:/COA_Project2$ nvcc matrix_Mul_gpu_part2.cu -o matrix_Mul_gpu_part2.ext
+gpu-20-11:/COA_Project2$ ./matrix_Mul_gpu_part2.ext
 Size of matrix (N) is 512 by 512.
-==26978== NVPROF is profiling process 26978, command: ./matrixMul_gpu_part2.ext
 Starting unoptimized GPU computation
-It took 276.343333 ms on avg.
+It took 275.906333 ms on avg.
 RUN OK.
-==26978== Profiling application: ./matrixMul_gpu_part2.ext
-==26978== Profiling result:
+gpu-20-11:/COA_Project2$ nvprof ./matrix_Mul_gpu_part2.ext
+Size of matrix (N) is 512 by 512.
+==18392== NVPROF is profiling process 18392, command: ./matrix_Mul_gpu_part2.ext
+Starting unoptimized GPU computation
+It took 275.830667 ms on avg.
+RUN OK.
+==18392== Profiling application: ./matrix_Mul_gpu_part2.ext
+==18392== Profiling result:
             Type  Time(%)      Time     Calls       Avg       Min       Max  Name
- GPU activities:  100.00%  1.13247s         4  283.12ms  276.20ms  302.01ms  GPUmatmul(int, double*, double*, double*)
-      API calls:   84.59%  1.13250s         4  283.13ms  276.20ms  302.02ms  cudaDeviceSynchronize
-                   15.31%  204.91ms         3  68.302ms  26.694us  204.84ms  cudaMallocManaged
-                    0.05%  608.14us         1  608.14us  608.14us  608.14us  cuDeviceTotalMem
-                    0.04%  525.70us         3  175.23us  137.54us  231.89us  cudaFree
-                    0.01%  97.301us       101     963ns     125ns  40.207us  cuDeviceGetAttribute
-                    0.01%  96.741us         4  24.185us  8.3120us  43.807us  cudaLaunchKernel
-                    0.00%  19.948us         1  19.948us  19.948us  19.948us  cuDeviceGetName
-                    0.00%  2.1380us         1  2.1380us  2.1380us  2.1380us  cuDeviceGetPCIBusId
-                    0.00%  1.0440us         3     348ns     160ns     703ns  cuDeviceGetCount
-                    0.00%     766ns         2     383ns     142ns     624ns  cuDeviceGet
-                    0.00%     262ns         1     262ns     262ns     262ns  cuDeviceGetUuid
+ GPU activities:  100.00%  1.11498s         4  278.75ms  276.21ms  286.27ms  GPUmatmul(int, double*, double*, double*)
+      API calls:   78.70%  1.11501s         4  278.75ms  276.22ms  286.27ms  cudaDeviceSynchronize
+                   21.21%  300.50ms         3  100.17ms  30.338us  300.41ms  cudaMallocManaged
+                    0.04%  573.99us         1  573.99us  573.99us  573.99us  cuDeviceTotalMem
+                    0.04%  532.07us         3  177.36us  128.80us  247.23us  cudaFree
+                    0.01%  102.21us         4  25.553us  6.9900us  48.373us  cudaLaunchKernel
+                    0.01%  94.321us       101     933ns     116ns  39.362us  cuDeviceGetAttribute
+                    0.00%  17.764us         1  17.764us  17.764us  17.764us  cuDeviceGetName
+                    0.00%  2.2250us         1  2.2250us  2.2250us  2.2250us  cuDeviceGetPCIBusId
+                    0.00%  1.0170us         3     339ns     188ns     640ns  cuDeviceGetCount
+                    0.00%     840ns         2     420ns     184ns     656ns  cuDeviceGet
+                    0.00%     242ns         1     242ns     242ns     242ns  cuDeviceGetUuid
 
-==26978== Unified Memory profiling result:
+==18392== Unified Memory profiling result:
 Device "Tesla V100-PCIE-32GB (0)"
    Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
-      40  153.60KB  4.0000KB  0.9961MB  6.000000MB  612.2560us  Host To Device
-      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  181.6960us  Device To Host
-      17         -         -         -           -  1.879872ms  Gpu page fault groups
+      42  146.29KB  4.0000KB  0.9961MB  6.000000MB  613.5360us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.7200us  Device To Host
+      17         -         -         -           -  1.858944ms  Gpu page fault groups
 Total CPU Page faults: 24
-gpu-20-11:/CS5375_GPU_Lecture/Project$ 
+gpu-20-11:/COA_Project2$ 
