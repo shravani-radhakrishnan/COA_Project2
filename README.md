@@ -9,6 +9,7 @@ Matrix Multiplication Kernel
 
 ===================================================
     Normal CPU Code Execution
+===================================================
 
 * Connect to the hppc
 * Clone the Project https://github.com/shravani-radhakrishnan/COA_Project2.git
