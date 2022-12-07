@@ -8,8 +8,7 @@ Matrix Multiplication Kernel
   * (TODO) smanduva@ttu.edu.
 
 
-    Normal CPU Code Execution
-===================================================
+   ### Normal CPU Code Execution
 
 * Connect to the hppc
 * Clone the Project https://github.com/shravani-radhakrishnan/COA_Project2.git
