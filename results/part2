@@ -1,0 +1,30 @@
+gpu-20-11:/CS5375_GPU_Lecture/Project$ nvprof ./matrixMul_gpu_part2.ext
+Size of matrix (N) is 512 by 512.
+==26978== NVPROF is profiling process 26978, command: ./matrixMul_gpu_part2.ext
+Starting unoptimized GPU computation
+It took 276.343333 ms on avg.
+RUN OK.
+==26978== Profiling application: ./matrixMul_gpu_part2.ext
+==26978== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  1.13247s         4  283.12ms  276.20ms  302.01ms  GPUmatmul(int, double*, double*, double*)
+      API calls:   84.59%  1.13250s         4  283.13ms  276.20ms  302.02ms  cudaDeviceSynchronize
+                   15.31%  204.91ms         3  68.302ms  26.694us  204.84ms  cudaMallocManaged
+                    0.05%  608.14us         1  608.14us  608.14us  608.14us  cuDeviceTotalMem
+                    0.04%  525.70us         3  175.23us  137.54us  231.89us  cudaFree
+                    0.01%  97.301us       101     963ns     125ns  40.207us  cuDeviceGetAttribute
+                    0.01%  96.741us         4  24.185us  8.3120us  43.807us  cudaLaunchKernel
+                    0.00%  19.948us         1  19.948us  19.948us  19.948us  cuDeviceGetName
+                    0.00%  2.1380us         1  2.1380us  2.1380us  2.1380us  cuDeviceGetPCIBusId
+                    0.00%  1.0440us         3     348ns     160ns     703ns  cuDeviceGetCount
+                    0.00%     766ns         2     383ns     142ns     624ns  cuDeviceGet
+                    0.00%     262ns         1     262ns     262ns     262ns  cuDeviceGetUuid
+
+==26978== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      40  153.60KB  4.0000KB  0.9961MB  6.000000MB  612.2560us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  181.6960us  Device To Host
+      17         -         -         -           -  1.879872ms  Gpu page fault groups
+Total CPU Page faults: 24
+gpu-20-11:/CS5375_GPU_Lecture/Project$ 

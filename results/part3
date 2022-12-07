@@ -1,0 +1,32 @@
+gpu-20-11:/CS5375_GPU_Lecture/Project$ vi matrixMul_gpu_part3.cu
+gpu-20-11:/CS5375_GPU_Lecture/Project$ nvcc matrixMul_gpu_part3.cu -o matrixMul_gpu_part3.ext
+gpu-20-11:/CS5375_GPU_Lecture/Project$ nvprof ./matrixMul_gpu_part3.ext
+Size of matrix (N) is 512 by 512.
+==28047== NVPROF is profiling process 28047, command: ./matrixMul_gpu_part3.ext
+Starting unoptimized GPU computation
+It took 139.234000 ms on avg.
+RUN OK.
+==28047== Profiling application: ./matrixMul_gpu_part3.ext
+==28047== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  570.50ms         4  142.63ms  138.00ms  152.00ms  GPUmatmul(int, double*, double*, double*)
+      API calls:   68.89%  570.52ms         4  142.63ms  138.01ms  152.00ms  cudaDeviceSynchronize
+                   30.95%  256.35ms         3  85.449ms  30.088us  256.26ms  cudaMallocManaged
+                    0.07%  598.57us         1  598.57us  598.57us  598.57us  cuDeviceTotalMem
+                    0.06%  472.63us         3  157.54us  127.53us  186.01us  cudaFree
+                    0.02%  141.08us         4  35.270us  6.6470us  115.30us  cudaLaunchKernel
+                    0.01%  99.020us       101     980ns     124ns  38.626us  cuDeviceGetAttribute
+                    0.00%  18.070us         1  18.070us  18.070us  18.070us  cuDeviceGetName
+                    0.00%  1.8700us         1  1.8700us  1.8700us  1.8700us  cuDeviceGetPCIBusId
+                    0.00%  1.0740us         3     358ns     199ns     643ns  cuDeviceGetCount
+                    0.00%     612ns         2     306ns     149ns     463ns  cuDeviceGet
+                    0.00%     252ns         1     252ns     252ns     252ns  cuDeviceGetUuid
+
+==28047== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      42  146.29KB  4.0000KB  0.9961MB  6.000000MB  623.6480us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.4080us  Device To Host
+      13         -         -         -           -  1.688992ms  Gpu page fault groups
+Total CPU Page faults: 24
+gpu-20-11:/CS5375_GPU_Lecture/Project$ 
