@@ -17,7 +17,7 @@ Matrix Multiplication Kernel
 * g++ matrixMul_cpu.cpp -o matrixMul_cpu.ext
 * ./matrixMul_cpu.ext
 * time ./matrixMul_cpu.ext
-* All results are saved in 
+* All results are saved in results folder in Original file
 
 
     ### PART 1 

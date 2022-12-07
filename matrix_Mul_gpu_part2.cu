@@ -1,3 +1,4 @@
+
 /*
  * _MATRIXMUL_GPU_CU_
  *
@@ -39,7 +40,7 @@ for (int i= gpu_x; i <N; i+=stridex)
 // ---------------------------------------------------------------------- check
 bool check(int N, double *ans)
 {
-for(int i = 0; i < N; i++) {
+                                                           for(int i = 0; i < N; i++) {
     for(int j = 0; j < N; j++) {
       if(ans[i*N+j] != 20.0) return false;
     }
@@ -57,7 +58,7 @@ int main(void)
   clock_t t;
 
   // Martices
-    double *x, *y, *ans;
+  double *x, *y, *ans;
    // Allocate memory accessible to both CPU and GPU
   cudaMallocManaged(&x,sizeof(double)*N*N);
   cudaMallocManaged(&y,sizeof(double)*N*N);
@@ -102,4 +103,4 @@ int main(void)
   cudaFree(ans);
   return 0;
 }
-/* EOF */                                                                                                                                                   2,1           Top
+/* EOF */

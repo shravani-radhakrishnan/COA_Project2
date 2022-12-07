@@ -1,3 +1,4 @@
+
 /*
  * _MATRIXMUL_GPU_CU_
  *
@@ -32,14 +33,13 @@ void GPUmatmul(int N, double *x, double *y, double *ans)
 }
 
 
-
 // ---------------------------------------------------------------------- check
 bool check(int N, double *ans)
 {
   for(int i = 0; i < N; i++) {
     for(int j = 0; j < N; j++) {
       if(ans[i*N+j] != 20.0) return false;
-             }
+	     }
   }
   return true;
 }
@@ -57,7 +57,7 @@ int main(void)
   double *x, *y, *ans;
 
   cudaMallocManaged(&x,sizeof(double)*N*N);
-   cudaMallocManaged(&y,sizeof(double)*N*N);
+  cudaMallocManaged(&y,sizeof(double)*N*N);
   cudaMallocManaged(&ans,sizeof(double)*N*N);
 
 
@@ -105,4 +105,3 @@ int main(void)
   return 0;
 }
 /* EOF */
-                                                                                                                                                  2,1           Top

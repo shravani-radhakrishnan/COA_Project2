@@ -1,0 +1,18 @@
+login-20-25:/COA_Project2$ ls
+matrixMul_cpu.cpp  matrixMul_cpu.ext  matrixMul_gpu.cu  matrix_Mul_gpu_part1.cu  matrix_Mul_gpu_part2.cu  matrix_Mul_gpu_part3.cu  matrix_Mul_gpu_part4.cu  README.md  results
+login-20-25:/COA_Project2$ g++ matrixMul_cpu.cpp -o matrixMul_cpu.ext
+login-20-25:/COA_Project2$ ./matrixMul_cpu.ext
+Size of matrix (N) is 512 by 512.
+Starting CPU computation
+It took 851.271667 ms on avg.
+RUN OK.
+login-20-25:/COA_Project2$ time ./matrixMul_cpu.ext
+Size of matrix (N) is 512 by 512.
+Starting CPU computation
+It took 851.720000 ms on avg.
+RUN OK.
+
+real	0m3.986s
+user	0m3.971s
+sys	0m0.003s
+login-20-25:/COA_Project2$ 

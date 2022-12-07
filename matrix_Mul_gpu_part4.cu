@@ -15,8 +15,7 @@
 #include <stdlib.h>
 
 // ------------------------------------------------------------------ GPUmatmul
-__global__
-void GPUmatmul(int N, double *x, double *y, double *ans)
+__global__ void GPUmatmul(int N, double *x, double *y, double *ans)
 {
   // Compute each thread's global row and column index
   int row_num = (blockIdx.y * blockDim.y) + threadIdx.y;
@@ -58,7 +57,7 @@ int main(void)
   double *x, *y, *ans;
 
   // TODO: Allocate Unified Memory - accessible from both CPU and GPU
-// ...
+  // ...
   // ...
   // ...
 
@@ -125,4 +124,3 @@ int main(void)
   return 0;
 }
 /* EOF */
-                                                                                                                                                   2,1           Top
