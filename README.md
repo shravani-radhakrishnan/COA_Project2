@@ -50,6 +50,12 @@ Matrix Multiplication Kernel
 * nvprof ./matrix_Mul_gpu_part4.exe 
 * Results are stored in Results folder in part4 file
 
+    ### Makefile
+
+* Instead of doing nvvcc for all 4 parts created a Makefile 
+* > make all - where by using make all .exe files will be created for 4 parts. 
+* > make clean - Where all .exe files will be removed.
+
 
 
 
